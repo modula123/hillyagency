@@ -1,88 +1,259 @@
 import React from "react";
-import { footerContent } from "../assets/assets";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaTiktok, FaXTwitter, FaYoutube } from "react-icons/fa6";
-import { Tooltip } from "react-tooltip";
+import { assets, contacts } from "../assets/assets";
+import { CiClock2, CiLocationOn, CiMail } from "react-icons/ci";
+import {
+  LuFacebook,
+  LuInstagram,
+  LuLinkedin,
+  LuPhone,
+  LuYoutube,
+} from "react-icons/lu";
+import { FaPinterestP, FaXTwitter } from "react-icons/fa6";
 
-const Footer = () => {
-  const year = new Date().getFullYear();
+import "./../style/component.scss";
 
+const HomeFooter = () => {
   return (
     <>
-      <div className="footer">
-        <div className="main">
-          <div className="container">
+      <footer className="footer">
+        <div className="container">
+          <div className="top">
             <div className="content">
-              <div className="div">
-                <h2>{footerContent.company.title} </h2>
-                <p>{footerContent.company.bio} </p>
+              <div className="left">
+                <Link to={""} className="logo">
+                  <img src={assets.whitelogo} alt="Logo" />
+                </Link>
               </div>
-              <div className="div">
-                <h3>{footerContent.colinks.title} </h3>
+              <div className="right">
+                <span className="icon">
+                  <LuPhone />
+                </span>
+                <p>Need help? Call us</p>
+                <Link to={`tel:${contacts.phone}`}>{contacts.phone}</Link>
+              </div>
+            </div>
+          </div>
+          <div className="main">
+            <div className="content">
+              <div className="brand">
+                <h3>Contact Us</h3>
                 <ul>
-                  {footerContent.colinks.links.map((li, index) => (
-                    <li key={index}>
-                      <Link to={li.url}>{li.text} </Link>
+                  <li>
+                    <Link>
+                      <span className="icon">
+                        <CiLocationOn />
+                      </span>
+                      <span className="text">{contacts.address}</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link>
+                      <span className="icon">
+                        <CiClock2 />
+                      </span>
+                      <span className="text">{contacts.hours}</span>
+                    </Link>
+                  </li>
+                  <li>
+                    {contacts.supportEmail && contacts.supportEmail != "" ? (
+                      <Link to={contacts.supportEmail}>
+                        <span className="icon">
+                          <CiMail />
+                        </span>
+                        <span className="text">{contacts.supportEmail}</span>
+                      </Link>
+                    ) : (
+                      <Link to={contacts.email}>
+                        <span className="icon">
+                          <CiMail />
+                        </span>
+                        <span className="text">{contacts.email}</span>
+                      </Link>
+                    )}
+                  </li>
+                </ul>
+                <h4>Follow us:</h4>
+                <ul className="socials">
+                  {contacts.socialsMedia.instagram ? (
+                    <li>
+                      <Link
+                        to={`https://instagram.com/${contacts.socialsMedia.instagram}`}
+                      >
+                        <LuInstagram />
+                      </Link>
                     </li>
-                  ))}
+                  ) : (
+                    ""
+                  )}
+                  {contacts.socialsMedia.facebook ? (
+                    <li>
+                      <Link
+                        to={`https://facebook.com/${contacts.socialsMedia.facebook}`}
+                      >
+                        <LuFacebook />
+                      </Link>
+                    </li>
+                  ) : (
+                    ""
+                  )}
+                  {contacts.socialsMedia.twitter ? (
+                    <li>
+                      <Link
+                        to={`https://x.com/${contacts.socialsMedia.twitter}`}
+                      >
+                        <FaXTwitter />
+                      </Link>
+                    </li>
+                  ) : (
+                    ""
+                  )}
+                  {contacts.socialsMedia.linkedin ? (
+                    <li>
+                      <Link
+                        to={`https://linkedin.com/company/${contacts.socialsMedia.linkedin}`}
+                      >
+                        <LuLinkedin />
+                      </Link>
+                    </li>
+                  ) : (
+                    ""
+                  )}
+                  {contacts.socialsMedia.youtube ? (
+                    <li>
+                      <Link
+                        to={`https://youtube.com/@{contacts.socialsMedia.youtube}`}
+                      >
+                        <LuYoutube />
+                      </Link>
+                    </li>
+                  ) : (
+                    ""
+                  )}
+                  {contacts.socialsMedia.pinterest ? (
+                    <li>
+                      <Link
+                        to={`https://pinterest.com/${contacts.socialsMedia.pinterest}`}
+                      >
+                        <FaPinterestP />
+                      </Link>
+                    </li>
+                  ) : (
+                    ""
+                  )}
                 </ul>
               </div>
-              <div className="div">
-                <h3>{footerContent.useful.title} </h3>
+              {/* <div className="links-cont"> */}
+              <div className="links">
+                <h3>Services</h3>
                 <ul>
-                  {footerContent.useful.links.map((li, index) => (
-                    <li key={index}>
-                      <Link to={li.url}>{li.text} </Link>
-                    </li>
-                  ))}
+                  <li>
+                    <Link>Tour Guide</Link>
+                  </li>
+                  <li>
+                    <Link>Transportation</Link>
+                  </li>
+                  <li>
+                    <Link>Hotel Booking</Link>
+                  </li>
+                  <li>
+                    <Link>Event Booking</Link>
+                  </li>
+                  <li>
+                    <Link>Rental Services</Link>
+                  </li>
+                  <li>
+                    <Link>Restaurant Booking</Link>
+                  </li>
                 </ul>
               </div>
-              <div className="div">
-                <h3>{footerContent.fast.title} </h3>
+              <div className="links">
+                <h3>Company</h3>
                 <ul>
-                  {footerContent.fast.links.map((li, index) => (
-                    <li key={index}>
-                      <Link to={li.url}>{li.text} </Link>
-                    </li>
-                  ))}
+                  <li>
+                    <Link>About Us</Link>
+                  </li>
+                  <li>
+                    <Link>Blogs</Link>
+                  </li>
+                  <li>
+                    <Link>Jobs & Career</Link>
+                  </li>
+                  <li>
+                    <Link>Contact Us</Link>
+                  </li>
+                  <li>
+                    <Link>Our Agents</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="links">
+                <h3>Support</h3>
+                <ul>
+                  <li>
+                    <Link>Help Center</Link>
+                  </li>
+                  <li>
+                    <Link>Live Chat</Link>
+                  </li>
+                  <li>
+                    <Link>WhatsApp</Link>
+                  </li>
+                  <li>
+                    <Link>How it works</Link>
+                  </li>
+                  <li>
+                    <Link>FAQs</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="links">
+                <h3>Legal</h3>
+                <ul>
+                  <li>
+                    <Link>Terms of Service</Link>
+                  </li>
+                  <li>
+                    <Link>Privacy Policy</Link>
+                  </li>
+                  <li>
+                    <Link>Cookies Policy</Link>
+                  </li>
+                  <li>
+                    <Link>Data Policy</Link>
+                  </li>
+                  <li>
+                    <Link>Refund Policy</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {/* </div> */}
+          </div>
+          <div className="bottom">
+            <div className="content">
+              <div className="left">
+                <p>&copy; {new Date().getFullYear()} Hilly Agency.</p>
+              </div>
+              <div className="right">
+                <ul>
+                  <li>
+                    <Link>Terms</Link>
+                  </li>
+                  <li>
+                    <Link>Privacy Policy</Link>
+                  </li>
+                  <li>
+                    <Link>Accessibility</Link>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <div className="bottom">
-          <div className="container">
-            <div className="content">
-              <div className="copy">
-                <p>Hilly Agency &copy; {year}</p>
-              </div>
-              <div className="social">
-                <Link id="ig" to={footerContent.socials.insta}>
-                  <FaInstagram />
-                </Link>
-                <Tooltip anchorId="ig" content="Instagram" />
-
-                <Link id="x" to={footerContent.socials.twitter}>
-                  <FaXTwitter />
-                </Link>
-                <Tooltip anchorId="x" content="Twitter X" />
-
-                <Link id="tt" to={footerContent.socials.tiktok}>
-                  <FaTiktok />
-                </Link>
-                <Tooltip anchorId="tt" content="TikTok" />
-
-                <Link id="u2b" to={footerContent.socials.youtube}>
-                  <FaYoutube />
-                </Link>
-                <Tooltip anchorId="u2b" content="YouTube" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </footer>
     </>
   );
 };
 
-export default Footer;
+export default HomeFooter;

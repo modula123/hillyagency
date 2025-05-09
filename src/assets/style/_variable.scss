@@ -1,0 +1,20 @@
+// colors
+$red-color: rgb(193, 51, 33);
+$yellow-color: rgb(251, 176, 64);
+
+// light theme
+$lprimary-color: rgb(255, 255, 255);
+$lsecondary-color: rgb(234, 235, 238);
+
+// dark theme
+$dprimary-color: rgb(18, 21, 30);
+$dsecondary-color: rgb(36, 39, 48);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", serif;
+}
+
+$transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);

@@ -1,18 +1,16 @@
 import React from "react";
-import Loader from "./Loader";
-import Header from "./Header";
+import HomeHeader from "./Header";
 import { Outlet } from "react-router-dom";
-import Footer from "./Footer";
+import HomeFooter from "./Footer";
 
-const Layout = () => {
+const HomeLayout = () => {
   return (
     <>
-      <Loader />
-      <Header />
+      <HomeHeader />
       <Outlet />
-      <Footer />
+      <HomeFooter />
     </>
   );
 };
 
-export default Layout;
+export default HomeLayout;
