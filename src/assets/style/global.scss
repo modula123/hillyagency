@@ -1,0 +1,108 @@
+@use "./variable" as *;
+
+.light-mode {
+  --primary-color: #{$lprimary-color};
+  --secondary-color: #{$lsecondary-color};
+  --accent-color: #{$red-color};
+  --yellow-color: #{$yellow-color};
+  --text-color: #{$dprimary-color};
+  --subtext-color: #{$dsecondary-color};
+}
+
+$transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
+
+.dark-mode {
+  --primary-color: #{$dprimary-color};
+  --secondary-color: #{$dsecondary-color};
+  --accent-color: #{$red-color};
+  --yellow-color: #{$yellow-color};
+  --text-color: #{$lprimary-color};
+  --subtext-color: #{$lsecondary-color};
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::selection {
+  color: rgb(255, 255, 255);
+  background: var(--accent-color);
+}
+
+body {
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+  font-weight: bold;
+  transition: all $transition;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--subtext-color);
+  transition: all $transition;
+}
+
+span {
+  display: flex;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  transition: $transition;
+}
+
+button,
+input,
+select,
+textarea {
+  outline: 0;
+  display: flex;
+  background: none;
+  transition: $transition;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+input,
+textarea,
+select,
+button,
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+  border: 1px solid;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: $transition;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+// REUSABLE CSS
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
