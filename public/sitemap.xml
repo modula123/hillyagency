@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+  <!-- Home -->
+  <url>
+    <loc>https://hillyagency.vercel.app/</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>https://hillyagency.vercel.app/contact</loc>
+    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <!-- Tours list -->
+  <url>
+    <loc>https://hillyagency.vercel.app/tours</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Example individual tour -->
+  <url>
+    <loc>https://hillyagency.vercel.app/tours/sample-tour-slug</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Transportation -->
+  <url>
+    <loc>https://hillyagency.vercel.app/transportation</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Destinations (example) -->
+  <url>
+    <loc>https://hillyagency.vercel.app/destinations/kigali-city-tour</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Blogs page -->
+  <url>
+    <loc>https://hillyagency.vercel.app/blogs</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Example blog post -->
+  <url>
+    <loc>https://hillyagency.vercel.app/blogs/solo-travel-tips-for-women-in-asia</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Add more blog URLs dynamically here -->
+</urlset>
