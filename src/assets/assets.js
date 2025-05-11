@@ -20,12 +20,82 @@ import hero2 from "/images/hero/gorilla.jpg";
 import hero3 from "/images/hero/kivu.jpg";
 import hero4 from "/images/hero/1.jpg";
 
+import bag from "/images/img/bag.png";
+import book from "/images/img/book.png";
+import price from "/images/img/price.png";
+import support from "/images/img/support.png";
+
+import thumbnail from "/images/img/vid.png";
+
+import testimonyThumbnail from "/images/img/testimony.png";
+
+import airbnb from "/images/partners/airbnb.svg";
+import booking from "/images/partners/booking.svg";
+import marriott from "/images/partners/marriott.svg";
+import tripadvisor from "/images/partners/tripadvisor.svg";
+import visitRda from "/images/partners/visit-rwanda.png";
+
+import blogPlaceholder from "/images/img/placeholder.jpg";
+import profilePlaceholder from "/images/img/profile.png";
+
+import canopy from "/images/img/canopy.jpg";
+
+// icons
+import hotelIcon from "/icons/hotel.png";
+import activityIcon from "/icons/activity.png";
+import carIcon from "/icons/cars.png";
+import tourIcon from "/icons/tour.png";
+import rentIcon from "/icons/rental.png";
+import restoIcon from "/icons/restaurant.png";
+
 export const assets = {
+  icons: {
+    hotelIcon,
+    carIcon,
+    activityIcon,
+    tourIcon,
+    rentIcon,
+    restoIcon,
+  },
   logo,
   loader,
+  canopy,
+  thumbnail,
+  blogPlaceholder,
+  profilePlaceholder,
+  testimonyVideo: "https://youtu.be/vYCUyZy0pkc",
+  testimonyThumbnail,
   whitelogo: wlogo,
   heroVid: vid1,
+  cta1bag: bag,
+  cta1book: book,
+  cta1price: price,
+  cta1support: support,
 };
+
+// brands
+export const brands = [
+  {
+    title: "Airbnb",
+    image: airbnb,
+  },
+  {
+    title: "Booking.com",
+    image: booking,
+  },
+  {
+    title: "TripAdvisor",
+    image: tripadvisor,
+  },
+  {
+    title: "Visit Rwanda",
+    image: visitRda,
+  },
+  {
+    title: "Marriott",
+    image: marriott,
+  },
+];
 
 // destination
 export const destinations = [
@@ -37,6 +107,7 @@ export const destinations = [
     isFeatured: true,
     bio: "Kigali blends modern living with rich history and vibrant local culture. Perfect for immersive urban and cultural experiences.",
     thumbnail: kigali,
+    currency: "$",
     description: `<h3>Welcome to Kigali</h3><p>Kigali is Rwanda’s capital, known for its cleanliness, safety, and rising urban charm. The city offers everything from historic landmarks and art galleries to bustling local markets and stunning cityscapes.</p>`,
 
     tours: [
@@ -54,9 +125,9 @@ export const destinations = [
         duration: "6 hours",
         price: 55,
         reviews: [
-          { userId: "u1", message: "A great intro to Kigali!", rating: 5 },
+          { userId: "u001", message: "A great intro to Kigali!", rating: 5 },
           {
-            userId: "u2",
+            userId: "u002",
             message: "Wonderful guide and clean city.",
             rating: 4,
           },
@@ -77,7 +148,7 @@ export const destinations = [
         price: 40,
         reviews: [
           {
-            userId: "u3",
+            userId: "u003",
             message: "Lively and fun! Loved the rooftop vibes.",
             rating: 5,
           },
@@ -190,12 +261,20 @@ export const destinations = [
         title: "Kigali Serena Hotel",
         slug: "serena-kigali",
         isFeatured: true,
+        price: 130,
         bio: "5-star comfort in the heart of Kigali, blending elegance with Rwandan warmth.",
         type: "Luxury",
         location: "CBD, Kigali",
         images: [kigali],
         description: `<h4>Elegance & Excellence</h4><p>Enjoy premium service, gourmet dining, a spa, and pool at Kigali Serena Hotel.</p>`,
-        reviews: [],
+        reviews: [
+          {
+            userId: "u2",
+            message:
+              "This hotel is a very game changer, been in different countries - but for sure this is breathtaking.",
+            rating: 4.5,
+          },
+        ],
       },
       {
         id: "mille-collines",
@@ -237,6 +316,316 @@ export const destinations = [
         reviews: [],
       },
     ],
+
+    transport: [
+      {
+        carId: "t123",
+        brand: "Toyota",
+        model: "Corolla Cross Hybrid",
+        year: 2020,
+        body: "SUV",
+        color: "Silver",
+        transmission: "Automatic",
+        fuel: "Hybrid",
+        ownerId: "u004",
+        listing: "for rent",
+        price: 120,
+        duration: "daily",
+        status: "available",
+        mileageLimit: "2300 Km",
+        lateFee: "20",
+        lateFeeDuration: "hour",
+        pickupLocation: "KN 7 Ave",
+        dropoffLocation: "KN 7 Ave",
+        insurance: "Full-coverage",
+        depositReq: 60,
+        document: {
+          video: "vid1",
+          files: [
+            { title: "Registration Certificate", source: "hero2" },
+            { title: "Insurance Docs", source: "hero2" },
+            { title: "Service History", source: "hero2" },
+          ],
+        },
+        dateListed: "2025-05-11",
+        gallery: [
+          "https://example.com/toyota-corolla-cross-hybrid-1.jpg",
+          "https://example.com/toyota-corolla-cross-hybrid-2.jpg",
+          "https://example.com/toyota-corolla-cross-hybrid-3.jpg",
+        ],
+        reviews: [
+          {
+            userId: "u001",
+            message:
+              "This car is very cool, ventilation and their support is top-notch.",
+            rating: 4,
+          },
+          {
+            userId: "u006",
+            message:
+              "Their customer services are best - looking for luxury rentals in Musanze, they do the best.",
+            rating: 5,
+          },
+        ],
+      },
+      {
+        carId: "t124",
+        brand: "Honda",
+        model: "CR-V Hybrid",
+        year: 2020,
+        body: "SUV",
+        color: "Red",
+        transmission: "Automatic",
+        fuel: "Hybrid",
+        ownerId: "u005",
+        listing: "for rent",
+        price: 130,
+        duration: "daily",
+        status: "available",
+        mileageLimit: "2500 Km",
+        lateFee: "25",
+        lateFeeDuration: "hour",
+        pickupLocation: "KN 5 Ave",
+        dropoffLocation: "KN 5 Ave",
+        insurance: "Full-coverage",
+        depositReq: 70,
+        document: {
+          video: "vid2",
+          files: [
+            { title: "Registration Certificate", source: "hero3" },
+            { title: "Insurance Docs", source: "hero3" },
+            { title: "Service History", source: "hero3" },
+          ],
+        },
+        dateListed: "2025-05-10",
+        gallery: [
+          "https://example.com/honda-crv-hybrid-1.jpg",
+          "https://example.com/honda-crv-hybrid-2.jpg",
+          "https://example.com/honda-crv-hybrid-3.jpg",
+        ],
+        reviews: [
+          {
+            userId: "u002",
+            message:
+              "Smooth ride and excellent fuel efficiency. Highly recommend!",
+            rating: 5,
+          },
+          {
+            userId: "u007",
+            message: "Comfortable and spacious. Perfect for family trips.",
+            rating: 4,
+          },
+        ],
+      },
+    ],
+
+    rentals: [
+      {
+        id: "rental_001",
+        title: "Modern Loft in Downtown LA",
+        images: [
+          "https://example.com/images/loft1.jpg",
+          "https://example.com/images/loft2.jpg",
+        ],
+        description: `<p>This stylish <strong>downtown loft</strong> features an open floor plan, modern kitchen, and rooftop access. Perfect for young professionals!</p>`,
+        amenities: [
+          "WiFi",
+          "Air Conditioning",
+          "Washer",
+          "Dryer",
+          "Gym Access",
+        ],
+        isFeatured: true,
+        reviews: [],
+        ownerId: "u004",
+        price: 2450,
+        location: {
+          city: "Los Angeles",
+          state: "CA",
+          country: "USA",
+        },
+        bedrooms: 1,
+        bathrooms: 1,
+        squareFeet: 850,
+        availableFrom: "2025-06-01",
+        rating: 4.6,
+        isAvailable: true,
+      },
+      {
+        id: "rental_002",
+        title: "Cozy Cottage by the Lake",
+        images: ["https://example.com/images/cottage1.jpg"],
+        description: `<p>Charming 2-bedroom cottage with a <em>private dock</em> and panoramic lake views. Ideal for nature lovers and weekend getaways.</p>`,
+        amenities: ["Fireplace", "Lake Access", "Patio", "Pet Friendly"],
+        ownerId: "u007",
+        price: 1800,
+        location: {
+          city: "Lake Placid",
+          state: "NY",
+          country: "USA",
+        },
+        bedrooms: 2,
+        bathrooms: 1,
+        squareFeet: 1100,
+        availableFrom: "2025-05-15",
+        rating: 4.8,
+        isAvailable: true,
+        isFeatured: true,
+        reviews: [],
+      },
+      {
+        id: "rental_003",
+        title: "Luxury High-Rise Apartment",
+        images: [
+          "https://example.com/images/luxury1.jpg",
+          "https://example.com/images/luxury2.jpg",
+        ],
+        description: `<p>Experience city living in this <strong>luxury high-rise</strong> apartment with floor-to-ceiling windows and concierge service.</p>`,
+        amenities: ["Gym", "Pool", "Concierge", "WiFi", "Parking"],
+        ownerId: "u002",
+        price: 3900,
+        location: {
+          city: "New York",
+          state: "NY",
+          country: "USA",
+        },
+        bedrooms: 2,
+        bathrooms: 2,
+        squareFeet: 1200,
+        availableFrom: "2025-07-01",
+        rating: 4.9,
+        isAvailable: false,
+      },
+      {
+        id: "rental_004",
+        title: "Suburban Family Home",
+        images: ["https://example.com/images/suburb1.jpg"],
+        description: `<p>This spacious <strong>4-bedroom home</strong> is located in a quiet suburban neighborhood with nearby schools and parks.</p>`,
+        amenities: ["Backyard", "Garage", "Washer", "Dryer", "Central Heating"],
+        ownerId: "u007",
+        price: 2700,
+        location: {
+          city: "Austin",
+          state: "TX",
+          country: "USA",
+        },
+        bedrooms: 4,
+        bathrooms: 3,
+        squareFeet: 2200,
+        availableFrom: "2025-05-20",
+        rating: 4.7,
+        isAvailable: true,
+        isFeatured: true,
+        reviews: [],
+      },
+      {
+        id: "rental_005",
+        title: "Rustic Mountain Cabin",
+        images: ["https://example.com/images/cabin1.jpg"],
+        description: `<p>Escape to this <em>cozy cabin</em> nestled in the Rockies. Enjoy hiking, skiing, and peace and quiet year-round.</p>`,
+        amenities: ["Fireplace", "Hot Tub", "Deck", "Mountain Views"],
+        ownerId: "u007",
+        price: 2000,
+        location: {
+          city: "Aspen",
+          state: "CO",
+          country: "USA",
+        },
+        bedrooms: 3,
+        bathrooms: 2,
+        squareFeet: 1500,
+        availableFrom: "2025-06-10",
+        rating: 4.5,
+        isAvailable: true,
+      },
+      {
+        id: "rental_006",
+        title: "Beachfront Condo",
+        images: [
+          "https://example.com/images/beach1.jpg",
+          "https://example.com/images/beach2.jpg",
+        ],
+        description: `<p>Wake up to ocean views in this fully furnished <strong>beachfront condo</strong>. Direct access to the sand and surf.</p>`,
+        amenities: ["Balcony", "Beach Access", "WiFi", "AC", "Pool"],
+        ownerId: "u007",
+        price: 3100,
+        location: {
+          city: "Santa Monica",
+          state: "CA",
+          country: "USA",
+        },
+        bedrooms: 2,
+        bathrooms: 2,
+        squareFeet: 1050,
+        availableFrom: "2025-06-01",
+        rating: 4.9,
+        isAvailable: false,
+      },
+      {
+        id: "rental_007",
+        title: "Studio Apartment in Tech District",
+        images: ["https://example.com/images/studio1.jpg"],
+        description: `<p>A compact, <em>tech-savvy</em> studio with smart appliances and easy access to downtown and transit.</p>`,
+        amenities: ["Smart TV", "WiFi", "Gym", "Pet Friendly"],
+        ownerId: "u007",
+        price: 1650,
+        location: {
+          city: "San Francisco",
+          state: "CA",
+          country: "USA",
+        },
+        bedrooms: 0,
+        bathrooms: 1,
+        squareFeet: 500,
+        availableFrom: "2025-05-12",
+        rating: 4.2,
+        isAvailable: true,
+        isFeatured: true,
+        reviews: [],
+      },
+      {
+        id: "rental_008",
+        title: "Victorian Home with Garden",
+        images: ["https://example.com/images/victorian1.jpg"],
+        description: `<p>Live in a beautifully restored <strong>Victorian home</strong> with a private garden and historic charm.</p>`,
+        amenities: ["Garden", "Clawfoot Tub", "Fireplace", "Library"],
+        ownerId: "u007",
+        price: 2800,
+        location: {
+          city: "Portland",
+          state: "OR",
+          country: "USA",
+        },
+        bedrooms: 3,
+        bathrooms: 2,
+        squareFeet: 1800,
+        availableFrom: "2025-06-15",
+        rating: 4.8,
+        isAvailable: true,
+      },
+      {
+        id: "rental_009",
+        title: "Urban Loft with Industrial Charm",
+        images: ["https://example.com/images/urbanloft1.jpg"],
+        description: `<p>Exposed brick, high ceilings, and huge windows give this <em>industrial-style loft</em> a bold personality.</p>`,
+        amenities: ["Washer/Dryer", "WiFi", "Security System"],
+        ownerId: "u007",
+        price: 2550,
+        location: {
+          city: "Chicago",
+          state: "IL",
+          country: "USA",
+        },
+        bedrooms: 1,
+        bathrooms: 1,
+        squareFeet: 900,
+        availableFrom: "2025-05-22",
+        rating: 4.4,
+        isAvailable: true,
+        isFeatured: true,
+        reviews: [],
+      },
+    ],
   },
   {
     id: "002",
@@ -246,6 +635,7 @@ export const destinations = [
     isFeatured: true,
     bio: "Home to mountain gorillas, lush volcanoes, and breathtaking highland scenery in northern Rwanda.",
     thumbnail: musanze,
+    currency: "$",
     description: `<h3>Welcome to Musanze</h3><p>Musanze offers an extraordinary blend of wildlife, adventure, and culture. From gorilla trekking in Volcanoes National Park to hiking volcanoes and visiting local villages, Musanze is a gateway to unforgettable experiences in Rwanda’s highlands.</p>`,
 
     tours: [
@@ -433,6 +823,191 @@ export const destinations = [
         reviews: [],
       },
     ],
+
+    transport: [
+      {
+        carId: "t125",
+        brand: "Ford",
+        model: "Escape Hybrid",
+        year: 2020,
+        body: "SUV",
+        color: "Blue",
+        transmission: "Automatic",
+        fuel: "Hybrid",
+        ownerId: "u006",
+        listing: "for rent",
+        price: 125,
+        duration: "daily",
+        status: "available",
+        mileageLimit: "2400 Km",
+        lateFee: "22",
+        lateFeeDuration: "hour",
+        pickupLocation: "KN 3 Ave",
+        dropoffLocation: "KN 3 Ave",
+        insurance: "Full-coverage",
+        depositReq: 65,
+        document: {
+          video: "vid3",
+          files: [
+            { title: "Registration Certificate", source: "hero4" },
+            { title: "Insurance Docs", source: "hero4" },
+            { title: "Service History", source: "hero4" },
+          ],
+        },
+        dateListed: "2025-05-09",
+        gallery: [
+          "https://example.com/ford-escape-hybrid-1.jpg",
+          "https://example.com/ford-escape-hybrid-2.jpg",
+          "https://example.com/ford-escape-hybrid-3.jpg",
+        ],
+        reviews: [
+          {
+            userId: "u003",
+            message: "Great performance and eco-friendly. A solid choice.",
+            rating: 4,
+          },
+          {
+            userId: "u008",
+            message: "Stylish design and comfortable interior.",
+            rating: 5,
+          },
+        ],
+      },
+      {
+        carId: "t126",
+        brand: "Hyundai",
+        model: "Tucson Hybrid",
+        year: 2020,
+        body: "SUV",
+        color: "White",
+        transmission: "Automatic",
+        fuel: "Hybrid",
+        ownerId: "u007",
+        listing: "for rent",
+        price: 135,
+        duration: "daily",
+        status: "available",
+        mileageLimit: "2600 Km",
+        lateFee: "30",
+        lateFeeDuration: "hour",
+        pickupLocation: "KN 2 Ave",
+        dropoffLocation: "KN 2 Ave",
+        insurance: "Full-coverage",
+        depositReq: 75,
+        document: {
+          video: "vid4",
+          files: [
+            { title: "Registration Certificate", source: "hero5" },
+            { title: "Insurance Docs", source: "hero5" },
+            { title: "Service History", source: "hero5" },
+          ],
+        },
+        dateListed: "2025-05-08",
+        gallery: ["https://example.com/hyundai-tucson-hybrid-1.jpg"],
+        reviews: [
+          {
+            userId: "u003",
+            message: "Great performance and eco-friendly. A solid choice.",
+            rating: 4,
+          },
+        ],
+      },
+    ],
+
+    rentals: [
+      {
+        id: "rental_010",
+        title: "Eco-Friendly Tiny House",
+        images: ["https://example.com/images/tinyhouse1.jpg"],
+        description: `<p>This <strong>off-grid tiny home</strong> is perfect for minimalist living with full amenities in a compact space.</p>`,
+        amenities: ["Solar Panels", "Rainwater Collection", "Compost Toilet"],
+        ownerId: "u007",
+        price: 1200,
+        location: {
+          city: "Boulder",
+          state: "CO",
+          country: "USA",
+        },
+        bedrooms: 1,
+        bathrooms: 1,
+        squareFeet: 400,
+        availableFrom: "2025-06-05",
+        rating: 4.3,
+        isFeatured: true,
+        reviews: [],
+        isAvailable: true,
+      },
+      {
+        id: "rental_011",
+        title: "Desert Adobe Retreat",
+        images: [
+          "https://example.com/images/adobe1.jpg",
+          "https://example.com/images/adobe2.jpg",
+        ],
+        description: `<p>Peaceful adobe-style home in the desert. Great for <em>remote work</em> and disconnecting from city life.</p>`,
+        amenities: ["WiFi", "Outdoor Shower", "Hammock", "Air Conditioning"],
+        ownerId: "u007",
+        price: 1750,
+        location: {
+          city: "Sedona",
+          state: "AZ",
+          country: "USA",
+        },
+        bedrooms: 2,
+        bathrooms: 1,
+        squareFeet: 1000,
+        availableFrom: "2025-07-01",
+        rating: 4.6,
+        isAvailable: true,
+      },
+      {
+        id: "rental_012",
+        title: "Penthouse with Skyline Views",
+        images: ["https://example.com/images/penthouse1.jpg"],
+        description: `<p>Top-floor penthouse with <strong>breathtaking city views</strong> and luxury finishes. Includes private elevator access.</p>`,
+        amenities: [
+          "Private Elevator",
+          "Rooftop Deck",
+          "Jacuzzi",
+          "Smart Home",
+        ],
+        ownerId: "u007",
+        price: 5200,
+        location: {
+          city: "Miami",
+          state: "FL",
+          country: "USA",
+        },
+        bedrooms: 3,
+        bathrooms: 3,
+        squareFeet: 2200,
+        availableFrom: "2025-06-20",
+        rating: 4.9,
+        isAvailable: false,
+      },
+      {
+        id: "rental_013",
+        title: "Country Farmhouse Escape",
+        images: ["https://example.com/images/farmhouse1.jpg"],
+        description: `<p>Historic <em>farmhouse with modern upgrades</em>. Includes a large barn, acres of land, and a garden.</p>`,
+        amenities: ["Barn", "Fire Pit", "Garden", "Wraparound Porch"],
+        ownerId: "u007",
+        price: 2300,
+        location: {
+          city: "Nashville",
+          state: "TN",
+          country: "USA",
+        },
+        bedrooms: 4,
+        bathrooms: 2,
+        squareFeet: 2500,
+        availableFrom: "2025-05-18",
+        rating: 4.7,
+        isAvailable: true,
+        isFeatured: true,
+        reviews: [],
+      },
+    ],
   },
   {
     id: "003",
@@ -442,6 +1017,7 @@ export const destinations = [
     isFeatured: true,
     bio: "A beautiful lakeside escape known for beaches, hot springs, and a relaxing vibe on the edge of Lake Kivu.",
     thumbnail: rubavu,
+    currency: "$",
     description: `<h3>Discover Rubavu</h3><p>Rubavu (Gisenyi) is a charming town nestled on the northern shores of Lake Kivu. With palm-lined beaches, hot springs, and stunning lake views, Rubavu is the perfect destination for relaxation and water adventures.</p>`,
 
     tours: [
@@ -629,6 +1205,7 @@ export const destinations = [
     isFeatured: true,
     bio: "A lush rainforest reserve teeming with biodiversity, ancient trees, and thrilling canopy walks in southwestern Rwanda.",
     thumbnail: nyungwe,
+    currency: "$",
     description: `<h3>Explore Nyungwe Forest</h3><p>Nyungwe Forest is one of Africa’s oldest rainforests. It’s a haven for primates, birds, and nature lovers. The park offers scenic hikes, rare chimpanzee tracking, and the iconic canopy walkway experience.</p>`,
 
     tours: [
@@ -761,6 +1338,7 @@ export const destinations = [
         isFeatured: true,
         bio: "Luxury eco-lodge nestled within a tea plantation at the edge of the forest.",
         type: "Luxury",
+        price: 200,
         location: "Gisakura",
         images: [nyungwe, hero1],
         description: `<h4>Rainforest Retreat</h4><p>Experience world-class hospitality with immersive nature experiences and tranquil spa services.</p>`,
@@ -814,6 +1392,7 @@ export const destinations = [
     slug: "akagera-national-park",
     isFeatured: true,
     bio: "Rwanda’s premier savanna reserve, home to the Big Five and a mosaic of lakes, woodlands, and wetlands in the east.",
+    currency: "$",
     thumbnail: akagera,
     description: `<h3>Discover Akagera National Park</h3><p>Akagera National Park is Rwanda’s largest protected wetland and savanna ecosystem. Located in the eastern province, it offers exceptional game drives, birdwatching, boat safaris, and cultural experiences. The park is renowned for its successful wildlife restoration, including the reintroduction of lions and rhinos, making it a premier destination for safari enthusiasts.</p>`,
 
@@ -959,6 +1538,7 @@ export const destinations = [
     slug: "karongi-lake-kivu",
     isFeatured: true,
     bio: "A tranquil lakeside town offering serene boat rides, cultural experiences, and breathtaking views of Lake Kivu.",
+    currency: "$",
     thumbnail: rusizi,
     description: `<h3>Discover Karongi</h3><p>Karongi, nestled along the shores of Lake Kivu, is a haven for those seeking peace and natural beauty. With its lush hills, tranquil waters, and rich cultural heritage, it's an ideal destination for relaxation and exploration.</p>`,
 
@@ -1108,6 +1688,7 @@ export const destinations = [
     isFeatured: true,
     bio: "A serene town rich in history, culture, and academia, offering a glimpse into Rwanda's heritage and intellectual legacy.",
     thumbnail: huye,
+    currency: "$",
     description:
       "<h3>Explore Butare</h3><p>Butare, now known as Huye, is a town in southern Rwanda renowned for its cultural significance and academic institutions. Home to the National University of Rwanda and several historical sites, Butare offers visitors a blend of education, history, and traditional Rwandan experiences.</p>",
 
@@ -1222,6 +1803,107 @@ export const destinations = [
         reviews: [],
       },
     ],
+
+    transport: [
+      {
+        carId: "t127",
+        brand: "Mazda",
+        model: "CX-5",
+        year: 2020,
+        body: "SUV",
+        color: "Grey",
+        transmission: "Automatic",
+        fuel: "Petrol",
+        ownerId: "u008",
+        listing: "for rent",
+        price: 140,
+        duration: "daily",
+        status: "available",
+        mileageLimit: "2800 Km",
+        lateFee: "35",
+        lateFeeDuration: "hour",
+        pickupLocation: "KN 4 Ave",
+        dropoffLocation: "KN 4 Ave",
+        insurance: "Full-coverage",
+        depositReq: 80,
+        document: {
+          video: "vid5",
+          files: [
+            { title: "Registration Certificate", source: "hero6" },
+            { title: "Insurance Docs", source: "hero6" },
+            { title: "Service History", source: "hero6" },
+          ],
+        },
+        dateListed: "2025-05-07",
+        gallery: [
+          "https://example.com/mazda-cx5-1.jpg",
+          "https://example.com/mazda-cx5-2.jpg",
+          "https://example.com/mazda-cx5-3.jpg",
+        ],
+        reviews: [
+          {
+            userId: "u009",
+            message:
+              "A comfortable ride with excellent handling. Perfect for long drives.",
+            rating: 5,
+          },
+          {
+            userId: "u010",
+            message: "Spacious interior and smooth drive. Highly recommend!",
+            rating: 4,
+          },
+        ],
+      },
+      {
+        carId: "t128",
+        brand: "Nissan",
+        model: "Rogue Hybrid",
+        year: 2020,
+        body: "SUV",
+        color: "Blue",
+        transmission: "Automatic",
+        fuel: "Hybrid",
+        ownerId: "u011",
+        listing: "for rent",
+        price: 145,
+        duration: "daily",
+        status: "available",
+        mileageLimit: "2900 Km",
+        lateFee: "40",
+        lateFeeDuration: "hour",
+        pickupLocation: "KN 6 Ave",
+        dropoffLocation: "KN 6 Ave",
+        insurance: "Full-coverage",
+        depositReq: 85,
+        document: {
+          video: "vid6",
+          files: [
+            { title: "Registration Certificate", source: "hero7" },
+            { title: "Insurance Docs", source: "hero7" },
+            { title: "Service History", source: "hero7" },
+          ],
+        },
+        dateListed: "2025-05-06",
+        gallery: [
+          "https://example.com/nissan-rogue-hybrid-1.jpg",
+          "https://example.com/nissan-rogue-hybrid-2.jpg",
+          "https://example.com/nissan-rogue-hybrid-3.jpg",
+        ],
+        reviews: [
+          {
+            userId: "u012",
+            message:
+              "Fuel-efficient and comfortable. Ideal for city and highway driving.",
+            rating: 5,
+          },
+          {
+            userId: "u013",
+            message: "Great features and smooth performance. Worth the price.",
+            rating: 4,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "008",
@@ -1231,6 +1913,7 @@ export const destinations = [
     isFeatured: true,
     bio: "A vibrant district in Eastern Rwanda, known for its rich cultural heritage, agricultural significance, and scenic landscapes.",
     thumbnail: nyagatare,
+    currency: "$",
     description:
       "<h3>Discover Nyagatare</h3><p>Nyagatare, located in the Eastern Province of Rwanda, is a hub of cultural history and agricultural activity. The district is renowned for its vast cattle farms, fertile plains, and historical sites that offer a glimpse into Rwanda's past.</p>",
     tours: [
@@ -1378,6 +2061,7 @@ export const destinations = [
     isFeatured: true,
     bio: "A charming town known for its scenic landscapes, rich agriculture, and proximity to cultural and wildlife attractions.",
     thumbnail: rwamagana,
+    currency: "$",
     description:
       "<h3>Discover Rwamagana</h3><p>Located in the Eastern Province of Rwanda, Rwamagana is a picturesque town surrounded by rolling hills and lush agricultural lands. It serves as a perfect base to explore nearby attractions such as the Akagera National Park, local markets, and rich cultural heritage.</p>",
 
@@ -1494,6 +2178,93 @@ export const destinations = [
         reviews: [],
       },
     ],
+
+    transport: [
+      {
+        carId: "t129",
+        brand: "Kia",
+        model: "Niro Hybrid",
+        year: 2020,
+        body: "SUV",
+        color: "Green",
+        transmission: "Automatic",
+        fuel: "Hybrid",
+        ownerId: "u014",
+        listing: "for rent",
+        price: 110,
+        duration: "daily",
+        status: "available",
+        mileageLimit: "2200 Km",
+        lateFee: "18",
+        lateFeeDuration: "hour",
+        pickupLocation: "KN 8 Ave",
+        dropoffLocation: "KN 8 Ave",
+        insurance: "Full-coverage",
+        depositReq: 55,
+        document: {
+          video: "vid7",
+          files: [
+            { title: "Registration Certificate", source: "hero8" },
+            { title: "Insurance Docs", source: "hero8" },
+            { title: "Service History", source: "hero8" },
+          ],
+        },
+        dateListed: "2025-05-05",
+        gallery: [
+          "https://example.com/kia-niro-hybrid-1.jpg",
+          "https://example.com/kia-niro-hybrid-2.jpg",
+          "https://example.com/kia-niro-hybrid-3.jpg",
+        ],
+        reviews: [
+          {
+            userId: "u015",
+            message: "Compact and efficient. Perfect for urban driving.",
+            rating: 4,
+          },
+          {
+            userId: "u016",
+            message: "Affordable and reliable. Great value for money.",
+            rating: 5,
+          },
+        ],
+      },
+      {
+        carId: "t130",
+        brand: "Subaru",
+        model: "Forester Hybrid",
+        year: 2020,
+        body: "SUV",
+        color: "Orange",
+        isFeatured: true,
+        transmission: "Automatic",
+        fuel: "Hybrid",
+        ownerId: "u017",
+        listing: "for rent",
+        price: 150,
+        duration: "daily",
+        status: "available",
+        mileageLimit: "3000 Km",
+        lateFee: "45",
+        lateFeeDuration: "hour",
+        pickupLocation: "KN 9 Ave",
+        dropoffLocation: "KN 9 Ave",
+        insurance: "Full-coverage",
+        depositReq: 90,
+        document: {
+          video: "vid8",
+          files: [
+            { title: "Registration Certificate", source: "hero9" },
+            { title: "Insurance Docs", source: "hero9" },
+            { title: "Service History", source: "hero9" },
+          ],
+        },
+        dateListed: "2025-05-04",
+        gallery: [
+          "https://example.com/subaru-forester-hybrid-1.jpg",
+          "https://example.com/subaru.jpg",
+        ],
+      },
+    ],
   },
   {
     id: "010",
@@ -1501,6 +2272,7 @@ export const destinations = [
     subtitle: "Bugesera – Land of Lakes and Culture",
     slug: "bugesera-lakes-culture",
     isFeatured: true,
+    currency: "$",
     bio: "A hidden gem in Rwanda known for its scenic lakes, cultural experiences, and traditional Rwandan villages.",
     thumbnail: "/images/destinations/bugesera.jpg",
     description:
@@ -1626,72 +2398,623 @@ export const destinations = [
   },
 ];
 
-///////////////////////
-////// COMPONENTS ////
-/////////////////////
-// FOOTER
-export const footerContent = {
-  company: {
-    title: "Hilly Agency",
-    bio: "A trusted travel partner in Rwanda, specializing in unforgetable tours, seamless transportation, and premium accomodations.",
+// system users
+export const userList = [
+  {
+    userId: "u001",
+    username: "ajohnson",
+    fullName: "Alice Johnson",
+    email: "alice@example.com",
+    passwordHash: "$2a$10$abcd1234",
+    phone: "+1-555-101-0001",
+    country: "United States",
+    languages: ["English"],
+    dateOfBirth: "1985-04-12",
+    gender: "female",
+    travelPreference: "solo",
+    role: "traveler",
+    interests: ["culture", "beaches"],
+    preferredContactMethod: "email",
+    createdAt: "1738672560698",
+    lastLogin: "1738683000000",
   },
-  colinks: {
-    title: "Company",
-    links: [
-      {
-        text: "About us",
-        url: "/about",
+  {
+    userId: "u002",
+    username: "davidsonmark",
+    fullName: "Mark Davidson",
+    email: "mark.d@example.com",
+    passwordHash: "$2a$10$efgh5678...",
+    phone: "+44-7700-900002",
+    country: "United Kingdom",
+    languages: ["English", "French"],
+    dateOfBirth: "1992-11-23",
+    gender: "male",
+    travelPreference: "family",
+    role: "traveler",
+    paymentInfo: {
+      cardType: "MasterCard",
+      cardLast4: "1234",
+      billingAddress: {
+        street: "44 Queen St",
+        city: "London",
+        zip: "W1A 1AA",
+        country: "United Kingdom",
       },
-      {
-        text: "Blogs",
-        url: "/articles",
+      paymentProviderId: "cus_xyz321",
+    },
+    address: {
+      street: "44 Queen St",
+      city: "London",
+      zip: "W1A 1AA",
+      country: "United Kingdom",
+    },
+    idVerification: {
+      documentType: "passport",
+      documentNumber: "UK1234567",
+      verified: true,
+      uploadUrl: "https://cdn.example.com/ids/u002/passport.jpg",
+    },
+    interests: ["history", "city tours"],
+    preferredContactMethod: "sms",
+    createdAt: "1738672660698",
+    lastLogin: "1738683120000",
+  },
+  {
+    userId: "u003",
+    username: "emichen",
+    fullName: "Emily Chen",
+    email: "emily.chen@example.com",
+    passwordHash: "$2a$10$ijkl9012...",
+    phone: "+86-10-55551234",
+    country: "China",
+    languages: ["Chinese", "English"],
+    dateOfBirth: "1996-02-18",
+    gender: "female",
+    travelPreference: "group",
+    role: "host",
+    address: {
+      street: "88 River Rd",
+      city: "Shanghai",
+      country: "China",
+    },
+    preferredContactMethod: "email",
+    interests: ["food", "nature"],
+    createdAt: "1738672760698",
+    lastLogin: "1738683200000",
+  },
+  {
+    userId: "u004",
+    username: "carmen",
+    fullName: "Carlos Mendez",
+    email: "carlos.m@example.com",
+    passwordHash: "$2a$10$mnop3456...",
+    phone: "+52-55-98765432",
+    country: "Mexico",
+    languages: ["Spanish"],
+    dateOfBirth: "1989-07-30",
+    gender: "male",
+    travelPreference: "couple",
+    role: "traveler",
+    preferredContactMethod: "app",
+    createdAt: "1738672860698",
+    lastLogin: "1738683300000",
+  },
+  {
+    userId: "u005",
+    username: "falzah",
+    fullName: "Fatima Al Zahrani",
+    email: "fatima.z@example.com",
+    passwordHash: "$2a$10$qrst7890...",
+    phone: "+966-50-1234567",
+    country: "Saudi Arabia",
+    languages: ["Arabic", "English"],
+    dateOfBirth: "1995-12-10",
+    gender: "female",
+    travelPreference: "solo",
+    role: "traveler",
+    idVerification: {
+      documentType: "national_id",
+      documentNumber: "SA098765",
+      verified: false,
+    },
+    interests: ["luxury", "shopping"],
+    preferredContactMethod: "email",
+    createdAt: "1738672960698",
+    lastLogin: "1738683400000",
+  },
+  {
+    userId: "u006",
+    username: "adminlar",
+    fullName: "Lars Henriksen",
+    email: "lars.h@example.com",
+    passwordHash: "$2a$10$uvwx4321...",
+    phone: "+47-123-45678",
+    country: "Norway",
+    languages: ["Norwegian", "English"],
+    dateOfBirth: "1978-05-15",
+    gender: "male",
+    role: "admin",
+    preferredContactMethod: "email",
+    createdAt: "1738673060698",
+    lastLogin: "1738683500000",
+  },
+  {
+    userId: "u007",
+    username: "pridesai",
+    fullName: "Priya Desai",
+    email: "priya.desai@example.com",
+    passwordHash: "$2a$10$yzab6789...",
+    phone: "+91-9876543210",
+    country: "India",
+    languages: ["Hindi", "English"],
+    dateOfBirth: "1990-09-21",
+    gender: "female",
+    travelPreference: "family",
+    role: "traveler",
+    preferredContactMethod: "sms",
+    createdAt: "1738673160698",
+    lastLogin: "1738683600000",
+  },
+  {
+    userId: "u008",
+    username: "geouros",
+    fullName: "George Kouros",
+    email: "g.kouros@example.com",
+    passwordHash: "$2a$10$cdef1234...",
+    phone: "+30-210-9988776",
+    country: "Greece",
+    languages: ["Greek", "English"],
+    dateOfBirth: "1982-08-03",
+    gender: "male",
+    role: "vendor",
+    businessInfo: {
+      companyName: "Kouros Travel",
+      serviceType: "Car Rentals",
+      taxId: "GR-TAX-998877",
+      registeredAddress: {
+        city: "Athens",
+        country: "Greece",
       },
-      {
-        text: "Partners",
-        url: "/about/#partners",
+    },
+    preferredContactMethod: "email",
+    createdAt: "1738673260698",
+    lastLogin: "1738683700000",
+  },
+  {
+    userId: "u009",
+    username: "soliveira",
+    fullName: "Sofia Oliveira",
+    email: "sofia.o@example.com",
+    passwordHash: "$2a$10$ghij5678...",
+    phone: "+351-21-5556667",
+    country: "Portugal",
+    languages: ["Portuguese", "English"],
+    dateOfBirth: "1994-03-29",
+    gender: "female",
+    travelPreference: "couple",
+    role: "traveler",
+    preferredContactMethod: "app",
+    createdAt: "1738673360698",
+    lastLogin: "1738683800000",
+  },
+  {
+    userId: "u010",
+    username: "malain",
+    fullName: "Zain Malik",
+    email: "zain.malik@example.com",
+    passwordHash: "$2a$10$klmn9012...",
+    phone: "+92-300-1122334",
+    country: "Pakistan",
+    languages: ["Urdu", "English"],
+    dateOfBirth: "1987-06-14",
+    gender: "male",
+    role: "vendor",
+    businessInfo: {
+      companyName: "Explore PK",
+      serviceType: "Adventure Tours",
+      taxId: "PK-TAX-1122",
+      registeredAddress: {
+        city: "Lahore",
+        country: "Pakistan",
       },
-      { text: "Contact us", url: "/contact" },
-    ],
+    },
+    preferredContactMethod: "sms",
+    createdAt: "1738673460698",
+    lastLogin: "1738683900000",
   },
-  useful: {
-    title: "Useful links",
-    links: [
-      { text: "Tours", url: "/tours" },
-      { text: "Accomodations", url: "/accomodations" },
-      { text: "Transportations", url: "/transportations" },
-      { text: "Hospitality", url: "/hospitality" },
-    ],
+  {
+    userId: "u011",
+    username: "marloe",
+    fullName: "Chloe Martin",
+    email: "chloe.m@example.com",
+    passwordHash: "$2a$10$opqr3456...",
+    phone: "+33-1-23456789",
+    country: "France",
+    languages: ["French", "English"],
+    dateOfBirth: "1993-10-08",
+    gender: "female",
+    role: "host",
+    preferredContactMethod: "email",
+    createdAt: "1738673560698",
+    lastLogin: "1738684000000",
   },
-  fast: {
-    title: "Fast links",
-    links: [
-      { text: "Things to do", url: "/articles/article/things-to-do" },
-      { text: "Destinations", url: "/articles/article/top-destinations" },
-      {
-        text: "Airport transfer",
-        url: "/articles/article/airport-transfer-process",
-      },
-    ],
+  {
+    userId: "u012",
+    username: "pivan",
+    fullName: "Ivan Petrov",
+    email: "ivan.p@example.com",
+    passwordHash: "$2a$10$stuv6789...",
+    phone: "+7-495-9876543",
+    country: "Russia",
+    languages: ["Russian", "English"],
+    dateOfBirth: "1984-01-11",
+    gender: "male",
+    role: "traveler",
+    interests: ["skiing", "mountains"],
+    preferredContactMethod: "app",
+    createdAt: "1738673660698",
+    lastLogin: "1738684100000",
   },
-  socials: {
-    insta: "https://instagram.com/hillyagency",
-    twitter: "https://x.com/hillyagency",
-    tiktok: "https://tiktok.com/@hillyagency",
-    youtube: "https://youtube.com/@hillyagency",
-  },
-};
+];
+const imageUrls = [
+  "https://images.unsplash.com/photo-1618641986557-1ecd230959aa?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1628563694622-5a76957fd09c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1553658024-39485fea1f16?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1579176647030-bd86f6fd4e1e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1619412112597-0ac2d2a2d0f7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1624024000238-b31760e3cf02?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1626469028023-896eda77d814?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGluc3RhZ3JhbSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1688385848658-fb7b2ff19e05?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGluc3RhZ3JhbSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+  "https://images.unsplash.com/photo-1693569444434-85aa71939cd4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGluc3RhZ3JhbSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+  "https://images.unsplash.com/photo-1624022889501-cd2830f38cfb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fGluc3RhZ3JhbSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+  "https://images.unsplash.com/photo-1626469215775-5bb781dcfd99?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGluc3RhZ3JhbSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1675081853633-f6491c1225e9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fGluc3RhZ3JhbSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1710385875809-3456dc37fd7f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODF8fGluc3RhZ3JhbSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+  "https://images.unsplash.com/photo-1610478865542-7d239b415687?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGluc3RhZ3JhbSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+  "https://images.unsplash.com/photo-1620117654333-c125fef82817?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTZ8fGluc3RhZ3JhbSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1701065893190-46f44657fbee?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA1fHxpbnN0YWdyYW0lMjBwcm9maWxlfGVufDB8fDB8fHww",
+];
 
-/////////////////
-/// HOMEPAGE ///
-///////////////
+userList.forEach((user, index) => {
+  user.profilePicture = imageUrls[index % imageUrls.length];
+});
 
-// hero
-export const homeHero = {
-  title: "Explore the Hilly Wonders of Rwanda",
-  descr:
-    "Experience Rwanda's breathtaking landscapes—lush hills, sparkling lakes, and majestic volcanic mountains—through curated luxury tours, seamless transportation, premier accommodations, and world-class hospitality.",
-  thumbnail: hero1,
-};
+// user testimonies
+export const testimonies = [
+  {
+    userId: "u001",
+    message:
+      "Traveling solo has never felt so secure and enriching. Thanks to the amazing local stays and smooth planning options, my cultural trips have become more immersive than ever!",
+    rating: 5,
+    isFeatured: true,
+  },
+  {
+    userId: "u002",
+    message:
+      "Planning a family vacation was effortless! From kid-friendly stays to easy car rentals, everything was top-notch. Highly recommend this platform to all family travelers.",
+    rating: 5,
+    isFeatured: true,
+  },
+  {
+    userId: "u003",
+    message:
+      "As a host, I appreciate how easy it is to manage listings and communicate with guests. The platform connects me with respectful, curious travelers from around the world.",
+    rating: 4,
+    isFeatured: true,
+  },
+  {
+    userId: "u004",
+    message:
+      "Loved how seamless our romantic getaway turned out to be. We booked tours, rentals, and cozy accommodations all in one place. It's now our go-to travel platform.",
+    rating: 5,
+    isFeatured: false,
+  },
+  {
+    userId: "u005",
+    message:
+      "The luxury options and curated shopping experiences made my solo trip feel truly indulgent. This platform understands high-end travelers really well.",
+    rating: 4,
+    isFeatured: true,
+  },
+  {
+    userId: "u006",
+    message:
+      "Managing this platform has shown me how powerful it is in connecting people and services across the world. It’s a joy seeing satisfied users thrive on it every day.",
+    rating: 5,
+    isFeatured: false,
+  },
+  {
+    userId: "u007",
+    message:
+      "As a mom of two, finding family-friendly tour packages and comfortable rentals in one place was a lifesaver. It saved us hours of planning stress!",
+    rating: 5,
+    isFeatured: true,
+  },
+  {
+    userId: "u008",
+    message:
+      "Our car rental company saw increased bookings thanks to this platform. The tools and insights for vendors are super helpful and easy to use.",
+    rating: 4,
+    isFeatured: true,
+  },
+  {
+    userId: "u009",
+    message:
+      "Perfect for couple trips! Every part of our romantic journey through Portugal, from boutique stays to private events, was handled with care.",
+    rating: 5,
+    isFeatured: false,
+  },
+  {
+    userId: "u010",
+    message:
+      "Being a vendor for adventure tours, I’ve seen steady growth in clients through this platform. The exposure and booking tools are top-class.",
+    rating: 5,
+    isFeatured: true,
+  },
+  {
+    userId: "u011",
+    message:
+      "Hosting has been incredibly smooth. I receive respectful travelers, and the platform ensures clear communication and secure bookings every time.",
+    rating: 4,
+    isFeatured: false,
+  },
+  {
+    userId: "u012",
+    message:
+      "I’m a mountain person, and this platform helped me explore remote ski destinations with great ease. The event planners nailed every detail of the trip.",
+    rating: 5,
+    isFeatured: false,
+  },
+];
+
+// blogs
+export const blogList = [
+  {
+    id: "001",
+    title: "Why You Should Use Tailwind CSS in 2025",
+    thumbnail: hero1,
+    authorId: "u003",
+    datePublished: 1738667236865,
+    readingTime: "4 min",
+    intro: "Utility-first CSS frameworks are redefining frontend development.",
+    description: `
+      <h2>Rapid Styling</h2>
+      <p>Tailwind lets you ship responsive, scalable UIs faster than ever.</p>
+    `,
+    tags: ["Tailwind", "Frontend", "CSS"],
+    comments: [],
+    isFeatured: false,
+    relatedPosts: ["004", "005"],
+  },
+  {
+    id: "002",
+    title: "Mastering React Hooks in 2025",
+    thumbnail: hero2,
+    authorId: "u004",
+    datePublished: 1738667237000,
+    readingTime: "6 min",
+    intro:
+      "Hooks are essential in modern React. Here's how to use them effectively.",
+    description: `
+      <h2>useState & useEffect</h2>
+      <p>These two hooks are the backbone of most functional React components.</p>
+    `,
+    tags: ["React", "JavaScript", "Hooks"],
+    comments: [
+      {
+        userId: "u001",
+        comment: "Super helpful breakdown!",
+        timestamp: 1738667241000,
+      },
+    ],
+    isFeatured: true,
+    relatedPosts: ["001", "006"],
+  },
+  {
+    id: "003",
+    title: "Exploring Ancient Ruins in Athens",
+    thumbnail: hero3,
+    authorId: "u008",
+    datePublished: 1738667237100,
+    readingTime: "5 min",
+    intro: "Athens takes you through centuries of Greek history.",
+    description: `
+      <h2>The Acropolis</h2>
+      <p>One of the most iconic landmarks in human history.</p>
+    `,
+    tags: ["Travel", "History", "Europe"],
+    comments: [
+      {
+        userId: "u002",
+        comment: "I've always wanted to visit! Great read.",
+        timestamp: 1738667237865,
+      },
+      {
+        userId: "u001",
+        comment: "So insightful about ancient Greek culture!",
+        timestamp: 1738667238865,
+      },
+    ],
+    isFeatured: false,
+    relatedPosts: ["004", "007"],
+  },
+  {
+    id: "004",
+    title: "Top 5 Beaches in Portugal You Must Visit",
+    thumbnail: hero4,
+    authorId: "u009",
+    datePublished: 1738667237200,
+    readingTime: "3 min",
+    intro: "Portugal has Europe's most breathtaking coastlines.",
+    description: `
+      <h2>Praia da Marinha</h2>
+      <p>A postcard-perfect beach with golden cliffs and turquoise water.</p>
+    `,
+    tags: ["Travel", "Beach", "Portugal"],
+    comments: [
+      {
+        userId: "u003",
+        comment: "Praia da Marinha is on my bucket list!",
+        timestamp: 1738667239865,
+      },
+      {
+        userId: "u007",
+        comment: "Love this list!",
+        timestamp: 1738667240865,
+      },
+    ],
+    isFeatured: true,
+    relatedPosts: ["003", "005"],
+  },
+  {
+    id: "005",
+    title: "Solo Travel Tips for Women in Asia",
+    thumbnail: hero1,
+    authorId: "u001",
+    datePublished: 1738667237300,
+    readingTime: "7 min",
+    intro: "Solo travel can be safe and empowering for women.",
+    description: `
+      <h2>Research is Key</h2>
+      <p>Knowing the culture and laws makes all the difference.</p>
+    `,
+    tags: ["Travel", "Solo", "Women"],
+    comments: [
+      {
+        userId: "u005",
+        comment: "Very encouraging, thank you!",
+        timestamp: 1738667242865,
+      },
+    ],
+    isFeatured: false,
+    relatedPosts: ["004", "007"],
+  },
+  {
+    id: "006",
+    title: "10 JavaScript Tricks Every Dev Should Know",
+    thumbnail: hero3,
+    authorId: "u010",
+    datePublished: 1738667237400,
+    readingTime: "6 min",
+    intro: "Level up your JavaScript knowledge with these 10 tricks.",
+    description: `
+      <h2>Short-circuiting</h2>
+      <p>A concise way to assign fallback values or conditions.</p>
+    `,
+    tags: ["JavaScript", "Coding", "WebDev"],
+    comments: [],
+    isFeatured: false,
+    relatedPosts: ["002", "001"],
+  },
+  {
+    id: "007",
+    title: "A Foodie's Guide to Street Eats in Bangkok",
+    thumbnail: hero2,
+    authorId: "u012",
+    datePublished: 1738667237500,
+    readingTime: "4 min",
+    intro: "Bangkok’s streets offer unforgettable flavors.",
+    description: `
+      <h2>Don't Miss Pad Thai</h2>
+      <p>This iconic noodle dish is served everywhere with local twists.</p>
+    `,
+    tags: ["Food", "Thailand", "Asia"],
+    comments: [
+      {
+        userId: "u003",
+        comment: "This made me hungry 😂",
+        timestamp: 1738667244865,
+      },
+    ],
+    isFeatured: true,
+    relatedPosts: ["005", "009"],
+  },
+  {
+    id: "008",
+    title: "How to Stay Productive Working Remotely",
+    thumbnail: hero3,
+    authorId: "u006",
+    datePublished: 1738667237600,
+    readingTime: "5 min",
+    intro: "Remote work is here to stay. Learn to stay efficient from home.",
+    description: `
+      <h2>Create a Routine</h2>
+      <p>Structure your day to avoid distractions and burnout.</p>
+    `,
+    tags: ["Remote Work", "Productivity", "Lifestyle"],
+    comments: [],
+    isFeatured: false,
+    relatedPosts: ["011", "010"],
+  },
+  {
+    id: "009",
+    title: "Mountain Escapes: Hiking the Swiss Alps",
+    thumbnail: hero4,
+    authorId: "u011",
+    datePublished: 1738667237700,
+    readingTime: "6 min",
+    intro: "Fresh air and epic views await in Switzerland's peaks.",
+    description: `
+      <h2>Gear Up</h2>
+      <p>Proper gear makes a huge difference in alpine comfort and safety.</p>
+    `,
+    tags: ["Hiking", "Mountains", "Adventure"],
+    comments: [],
+    isFeatured: true,
+    relatedPosts: ["003", "007"],
+  },
+  {
+    id: "010",
+    title: "Dark Mode Design Tips for 2025",
+    thumbnail: bugesera,
+    authorId: "u003",
+    datePublished: 1738667237800,
+    readingTime: "4 min",
+    intro: "Dark mode isn't just trendy—it's functional.",
+    description: `
+      <h2>Contrast Matters</h2>
+      <p>Use proper contrast ratios to maintain readability.</p>
+    `,
+    tags: ["Design", "UI/UX", "DarkMode"],
+    comments: [],
+    isFeatured: false,
+    relatedPosts: ["001", "002"],
+  },
+  {
+    id: "011",
+    title: "Beginner’s Guide to Starting a Tech Blog",
+    thumbnail: hero1,
+    authorId: "u013",
+    datePublished: 1738667237900,
+    readingTime: "5 min",
+    intro: "Share your knowledge and grow your career by blogging.",
+    description: `
+      <h2>Pick a Niche</h2>
+      <p>Focus on one area of expertise to build a loyal audience.</p>
+    `,
+    tags: ["Blogging", "Tech", "Career"],
+    comments: [],
+    isFeatured: false,
+    relatedPosts: ["008", "010"],
+  },
+  {
+    id: "012",
+    title: "Top 10 Tools for Frontend Developers in 2025",
+    thumbnail: hero4,
+    authorId: "u005",
+    datePublished: 1738667238000,
+    readingTime: "7 min",
+    intro: "Speed up your workflow with these must-have frontend tools.",
+    description: `
+      <h2>VS Code</h2>
+      <p>Still the #1 editor, packed with powerful extensions.</p>
+    `,
+    tags: ["Frontend", "Tools", "Dev"],
+    comments: [],
+    isFeatured: true,
+    relatedPosts: ["001", "006"],
+  },
+];
 
 // CONTACTS
 export const contacts = {
