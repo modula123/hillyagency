@@ -589,4 +589,199 @@ $transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
   }
 }
 
+//  TOUR CARD
+.tour-card,
+.blog-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 2rem;
+  background: transparent;
+  color: var(--subtext-color);
+  box-shadow: 0 0 1px 0 var(--subtext-color);
 
+  .img {
+    width: 100%;
+    height: 14rem;
+    position: relative;
+    background: var(--secondary-color);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: flex;
+      position: absolute;
+      color: var(--accent-color);
+      background: var(--primary-color);
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 1rem;
+      padding: 0.2rem 0.6rem;
+    }
+  }
+
+  .text {
+    position: relative;
+    margin-top: -2rem;
+    border-radius: 1.8rem;
+    background: var(--primary-color);
+    width: 100%;
+    height: 100%;
+    padding: 2rem 1rem;
+
+    .rating {
+      position: absolute;
+      gap: 0.2rem;
+      top: -0.8rem;
+      right: 1.5rem;
+      display: flex;
+      font-size: 0.8rem;
+      border-radius: 1rem;
+      align-items: center;
+      padding: 0.2rem 0.4rem;
+      box-shadow: 0 0 1px 0.2px var(--subtext-color);
+      background: var(--primary-color);
+
+      span {
+        display: flex;
+      }
+
+      svg {
+        color: var(--yellow-color);
+      }
+    }
+
+    h4 {
+      display: flex;
+      position: relative;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: bolder;
+      color: var(--text-color);
+    }
+
+    .div {
+      padding: 1rem 0.2rem;
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: space-between;
+
+      .location {
+        gap: 0.2rem;
+        display: flex;
+        font-size: 0.8rem;
+        align-items: center;
+        font-weight: 300;
+        color: var(--subtext-color);
+
+        span {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .stars {
+        gap: 0.1rem;
+        opacity: 0.6;
+        display: flex;
+        font-size: 0.8rem;
+        align-items: center;
+        color: var(--yellow-color);
+      }
+    }
+
+    .blog-meta {
+      margin-top: 0.6rem;
+      position: relative;
+      gap: 0.6rem;
+      display: flex;
+      padding: 0.2rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        opacity: 0.6;
+        font-size: 0.8rem;
+        color: var(--subtext-color);
+      }
+    }
+
+    .read-more {
+      margin-top: 1rem;
+      display: flex;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent-color);
+
+      &:hover {
+        color: var(--yellow-color);
+      }
+    }
+
+    .price-book {
+      display: flex;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+      position: relative;
+      align-items: center;
+      justify-content: space-between;
+
+      .price {
+        font-size: 1rem;
+        font-weight: 800;
+        gap: 0.2rem;
+        display: flex;
+        align-items: end;
+        color: var(--text-color);
+
+        small {
+          font-weight: 300;
+        }
+      }
+
+      a {
+        display: flex;
+        overflow: hidden;
+        font-size: 0.9rem;
+        font-weight: 600;
+        position: relative;
+        border-radius: 1rem;
+        padding: 0.6rem 1rem;
+        color: var(--text-color);
+        background: var(--secondary-color);
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: scaleX(0);
+          transform-origin: right;
+          background: var(--accent-color);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover {
+          color: white;
+
+          &::before {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+        }
+      }
+    }
+  }
+}
