@@ -903,7 +903,7 @@ export const destinations = [
           ],
         },
         dateListed: "2025-05-08",
-        gallery: ["https://example.com/hyundai-tucson-hybrid-1.jpg"],
+        gallery: ["https://via.placeholder.com/300x200?text=No+Image"],
         reviews: [
           {
             userId: "u003",
@@ -918,7 +918,7 @@ export const destinations = [
       {
         id: "rental_010",
         title: "Eco-Friendly Tiny House",
-        images: ["https://example.com/images/tinyhouse1.jpg"],
+        images: [hero2, "https://example.com/images/tinyhouse1.jpg"],
         description: `<p>This <strong>off-grid tiny home</strong> is perfect for minimalist living with full amenities in a compact space.</p>`,
         amenities: ["Solar Panels", "Rainwater Collection", "Compost Toilet"],
         ownerId: "u007",
