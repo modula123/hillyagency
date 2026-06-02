@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-nunito: 'Nunito', system-ui, sans-serif;
+}
+
+/* ─── LIGHT MODE ─────────────────────────────────────────── */
+.light {
+  --bg: #ffffff;
+  --bg2: #eaebee;
+  --text: #12151e;
+  --subtext: #5a5f72;
+  --accent: rgb(193, 51, 33);
+  --gold: rgb(251, 176, 64);
+  --border: rgba(0, 0, 0, 0.08);
+  --dark: #12151e;
+}
+
+/* ─── DARK MODE ──────────────────────────────────────────── */
+.dark {
+  --bg: #12151e;
+  --bg2: #242730;
+  --text: #f0f0f0;
+  --subtext: #8b8fa0;
+  --accent: rgb(193, 51, 33);
+  --gold: rgb(251, 176, 64);
+  --border: rgba(255, 255, 255, 0.08);
+  --dark: #12151e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-nunito), system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+
+::selection { color: #fff; background: var(--accent); }
+
+img { width: 100% !important; height: auto; object-fit: cover;pointer-events: none; }
+a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+ul, li, ol { list-style: none; }
+button { cursor: pointer; font-family: inherit; }
+
+/* ─── PAGE HERO (dark bg, always white text) ─────────────── */
+.page-hero {
+  background: #12151e;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-content {
+  color: #ffffff !important;
+}
+
+.page-hero-content h1,
+.page-hero-content h2,
+.page-hero-content p,
+.page-hero-content span {
+  color: inherit;
+}
+
+.page-hero-sub {
+  color: rgba(255,255,255,0.6) !important;
+}
+
+/* ─── SCROLL PROGRESS ────────────────────────────────────── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent);
+  z-index: 9999999;
+  transition: width 0.1s linear;
+}
+
+/* ─── PAGE LOADER ────────────────────────────────────────── */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.page-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ─── SECTION TITLES ─────────────────────────────────────── */
+.sec-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+.sec-title h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.2;
+}
+.sec-title p { font-size: 0.9rem; color: var(--subtext); margin-top: 0.25rem; }
+
+/* ─── BUTTONS ────────────────────────────────────────────── */
+.view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-radius: 1rem;
+  color: var(--bg);
+  background: var(--text);
+  white-space: nowrap;
+  transition: all 0.4s ease;
+}
+.view-more-btn:hover { background: var(--accent); color: white; }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--accent);
+  color: white;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent);
+}
+.btn-primary:hover { background: transparent; color: var(--accent); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  transition: all 0.3s ease;
+}
+.btn-outline:hover { background: var(--accent); color: white; }
+
+/* ─── CARD SHARED ────────────────────────────────────────── */
+.hilly-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.hilly-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+/* ─── NO RESULT ──────────────────────────────────────────── */
+.no-result { padding: 3rem; text-align: center; color: var(--subtext); width: 100%; }
+
+/* ─── VIDEO MODAL ────────────────────────────────────────── */
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+}
+.video-modal-container {
+  position: relative;
+  width: 90%;
+  max-width: 860px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+.video-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* ─── PLACEHOLDER IMAGE FALLBACK ─────────────────────────── */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--bg2) 0%, var(--border) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--subtext);
+  font-size: 12px;
+}
+
+/* ─── BOOKING MODAL OVERLAY ──────────────────────────────── */
+.booking-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  padding: 1rem;
+}
+.booking-modal-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
